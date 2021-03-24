@@ -1,10 +1,28 @@
-## TODO nf-core: Please run the following command to build this file:
-#                nf-core modules create-test-yml kb/count
-- name: kb count
-  command: nextflow run ./tests/software/kb/count -entry test_kb_count -c tests/config/nextflow.config
+- name: kb count test_kb_count
+  command: nextflow run tests/software/kb/count -entry test_kb_count -c tests/config/nextflow.config
   tags:
     - kb
     - kb_count
   files:
-    - path: output/kb/test.bam
-      md5sum: e667c7caad0bc4b7ac383fd023c654fc
+    - path: output/kb/output/output.bus
+      md5sum: b7e8e84bb0a535530a2b5d08facf3a50
+    - path: output/kb/output/run_info.json
+      md5sum: 07af1575f4883860f42bba1739735dfa
+    - path: output/kb/output/inspect.json
+      md5sum: ae3f99859e015d1080e5733694ac42b8
+    - path: output/kb/output/10xv3_whitelist.txt
+      md5sum: 3d36d0a4021fd292b265e2b5e72aaaf3
+    - path: output/kb/output/transcripts.txt
+      md5sum: b7a82c927ee20f835b7db40f4ec56f99
+    - path: output/kb/output/output.unfiltered.bus
+      md5sum: c3e2bb529b894f237c302b0cbfb8e773
+    - path: output/kb/output/kb_info.json
+      md5sum: 1bf6db38774ca80c3eb681d81f717483
+    - path: output/kb/output/matrix.ec
+      md5sum: 846e8013149b77fd77c1e316cc0670e0
+    - path: output/kb/output/counts_unfiltered/cells_x_genes.mtx
+      md5sum: f2531bca1266c9e6e9c4a24e3091daf9
+    - path: output/kb/output/counts_unfiltered/cells_x_genes.genes.txt
+      md5sum: 2901af8fbd18236ea5c641cc81448cac
+    - path: output/kb/output/counts_unfiltered/cells_x_genes.barcodes.txt
+      md5sum: c13c89111d8020a9917ef8f5e370bd36

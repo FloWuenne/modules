@@ -48,10 +48,10 @@ output:
       type: file
       description: File containing software version
       pattern: "*.{version.txt}"
-  - h5ad:
+  - output:
       type: file
-      description: File containing software version
-      pattern: "*.{h5ad}"
+      description: output folder
+      pattern: "output"
 
 authors:
   - "@flowuenne"

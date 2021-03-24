@@ -7,7 +7,7 @@ include { KB_COUNT } from '../../../../software/kb/count/main.nf' addParams( opt
 workflow test_kb_count {
     
     def input = []
-    input = [ [ id:'test', single_end:false ], // meta map
+    input = [ [ id:'test' ], // meta map
                 file("${launchDir}/tests/data/fastq/heart_1k_v3_S1_L001_R1_001.1M_reads.fastq.gz", checkIfExists: true),
                 file("${launchDir}/tests/data/fastq/heart_1k_v3_S1_L001_R2_001.1M_reads.fastq.gz", checkIfExists: true)]
 

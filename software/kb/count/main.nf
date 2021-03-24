@@ -24,8 +24,9 @@ process KB_COUNT {
     path(t2g)
 
     output:
-    tuple val(meta), path("*.h5ad"), emit: h5ad
-    path "*.version.txt"          , emit: version
+    tuple val(meta)
+    path "output" ,         emit: output
+    path "*.version.txt",   emit: version
 
     script:
     def software = getSoftwareName(task.process)
@@ -35,12 +36,12 @@ process KB_COUNT {
     kb \\
     count \\
     $options.args \\
-    -i index \\
-    -g t2g \\
+    -i $index \\
+    -g $t2g \\
     -x 10xv3 \\
-    --h5ad \\
-    fastq1 \\
-    fastq2
+    -o output \\
+    $fastq1 \\
+    $fastq2
 
     echo \$(kb 2>&1) | sed 's/^kb_python //; s/Usage.*\$//' > ${software}.version.txt
     """
