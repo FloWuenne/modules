@@ -8,11 +8,11 @@ workflow test_kb_count {
     
     def input = []
     input = [ [ id:'test', single_end:false ], // meta map
-                file("${launchDir}/output/fastq/heart_1k_v3_S1_L001_R1_001.1M_reads.fastq.gz", checkIfExists: true),
-                file("${launchDir}/output/fastq/heart_1k_v3_S1_L001_R2_001.1M_reads.fastq.gz", checkIfExists: true)]
+                file("${launchDir}/tests/data/fastq/heart_1k_v3_S1_L001_R1_001.1M_reads.fastq.gz", checkIfExists: true),
+                file("${launchDir}/tests/data/fastq/heart_1k_v3_S1_L001_R2_001.1M_reads.fastq.gz", checkIfExists: true)]
 
     KB_COUNT (  input,
-                file("${launchDir}/output/kb/kb_ref_index.idx", checkIfExists: true),
-                file("${launchDir}/output/kb/t2g.txt", checkIfExists: true)
+                file("${launchDir}/tests/data/kb/kb_ref_index.idx", checkIfExists: true),
+                file("${launchDir}/tests/data/kb/t2g.txt", checkIfExists: true)
      )
 }
