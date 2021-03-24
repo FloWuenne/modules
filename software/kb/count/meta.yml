@@ -20,10 +20,22 @@ input:
         Groovy Map containing sample information
         e.g. [ id:'test', single_end:false ]
   ## TODO nf-core: Delete / customise this example input
-  - bam:
+  - fastq1:
       type: file
-      description: BAM/CRAM/SAM file
-      pattern: "*.{bam,cram,sam}"
+      description: Read 1 fastq file
+      pattern: "*.{fastq.gz,fastq}"
+  - fastq2:
+      type: file
+      description: Read 2 fastq file
+      pattern: "*.{fastq.gz,fastq}"
+  - index:
+      type: file
+      description: kb-ref index file
+      pattern: "*.{idx}"
+  - index:
+      type: file
+      description: kb-ref t2g file
+      pattern: "*.{.txt}"
 
 ## TODO nf-core: Add a description of all of the variables used as output
 output:
