@@ -1,0 +1,45 @@
+name: kb_count
+## TODO nf-core: Add a description of the module and list keywords
+description: quantifies scRNA-seq data from fastq files using kb-python
+keywords:
+  - sort
+tools:
+  - kb:
+      description: kallisto and bustools are wrapped in an easy-to-use program called kb
+      homepage: https://www.kallistobus.tools/
+      documentation: https://kb-python.readthedocs.io/en/latest/index.html
+      tool_dev_url: https://github.com/pachterlab/kb_python
+      doi: ""
+      licence: BSD 3-Clause License
+
+## TODO nf-core: Add a description of all of the variables used as input
+input:
+  - meta:
+      type: map
+      description: |
+        Groovy Map containing sample information
+        e.g. [ id:'test', single_end:false ]
+  ## TODO nf-core: Delete / customise this example input
+  - bam:
+      type: file
+      description: BAM/CRAM/SAM file
+      pattern: "*.{bam,cram,sam}"
+
+## TODO nf-core: Add a description of all of the variables used as output
+output:
+  - meta:
+      type: map
+      description: |
+        Groovy Map containing sample information
+        e.g. [ id:'test', single_end:false ]
+  - version:
+      type: file
+      description: File containing software version
+      pattern: "*.{version.txt}"
+  - h5ad:
+      type: file
+      description: File containing software version
+      pattern: "*.{h5ad}"
+
+authors:
+  - "@flowuenne"
