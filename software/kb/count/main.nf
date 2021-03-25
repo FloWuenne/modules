@@ -20,24 +20,34 @@ process KB_COUNT {
 
     input:
     tuple val(meta), path(fastq1), path(fastq2)
-    path(index)
-    path(t2g)
+    path index
+    path t2g
+    path t1c
+    path t2c
+    val use_t1c
+    val use_t2c
 
     output:
     tuple val(meta)
-    path "output" ,         emit: output
+    path "output"       ,   emit: output
     path "*.version.txt",   emit: version
 
     script:
     def software = getSoftwareName(task.process)
     def prefix   = options.suffix ? "${meta.id}${options.suffix}" : "${meta.id}"
+    def cdna  = use_t1c ? "-c1 $t1c" : ''
+    def introns  = use_t2c ? "-c2 $t2c" : ''
 
     """
     kb \\
     count \\
     $options.args \\
+    --threads $task.cpus \\
+    -m  \\ 
     -i $index \\
     -g $t2g \\
+    $cdna \\
+    $introns \\ 
     -x 10xv3 \\
     -o output \\
     $fastq1 \\

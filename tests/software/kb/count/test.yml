@@ -1,13 +1,13 @@
 - name: kb count test_kb_count
   command: nextflow run tests/software/kb/count -entry test_kb_count -c tests/config/nextflow.config
   tags:
-    - kb
     - kb_count
+    - kb
   files:
     - path: output/kb/output/output.bus
       md5sum: b7e8e84bb0a535530a2b5d08facf3a50
     - path: output/kb/output/run_info.json
-      md5sum: 07af1575f4883860f42bba1739735dfa
+      md5sum: 130de711c612568b568ac3998037e6f0
     - path: output/kb/output/inspect.json
       md5sum: ae3f99859e015d1080e5733694ac42b8
     - path: output/kb/output/10xv3_whitelist.txt
@@ -17,7 +17,7 @@
     - path: output/kb/output/output.unfiltered.bus
       md5sum: c3e2bb529b894f237c302b0cbfb8e773
     - path: output/kb/output/kb_info.json
-      md5sum: 1bf6db38774ca80c3eb681d81f717483
+      md5sum: 14b9405d1192794ac063c6839e0d29e6
     - path: output/kb/output/matrix.ec
       md5sum: 846e8013149b77fd77c1e316cc0670e0
     - path: output/kb/output/counts_unfiltered/cells_x_genes.mtx
